@@ -31,12 +31,11 @@ namespace CodeQLTesting.Controllers
         }
 
         [HttpPost("login")]
-
         public IActionResult Login([FromBody] string username, [FromBody] string password)
         {
-        if(username =="user1"&& password=="2131232131"){
-
-            return Ok();
+            if(username=="user1" && password == "password123")
+            {
+                return Ok();
             }
             return Ok();
         }
