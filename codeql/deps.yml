@@ -2,7 +2,7 @@
  * @name dependencies
  * @description finds and lists referenced dependencies
  * @kind problem
- * @problem.severity recommendation
+ * @problem.severity warning
  * @tags setup_check
  * @id setup
  */
