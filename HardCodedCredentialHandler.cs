@@ -13,10 +13,10 @@ namespace CodeQLTesting
             string password = ctx.Request.Query["password"];
 
             // BAD: Inbound authentication made by comparison to string literal
-            //if (password == "myPa55word")
-            //{
-            //    ctx.Response.Redirect("login");
-            //}
+            if (password == "myPa55word")
+            {
+                ctx.Response.Redirect("login");
+            }
 
             //string hashedPassword = loadPasswordFromSecretConfig();
 
