@@ -34,6 +34,13 @@ namespace CodeQLTesting.Controllers
         public IActionResult Login([FromBody] string username, [FromBody] string password)
         {
             BadClass badClass = new BadClass();
+            if (true)
+            {
+
+            } else
+            {
+                int i = 0;
+            }
             return Ok();
         }
     }
