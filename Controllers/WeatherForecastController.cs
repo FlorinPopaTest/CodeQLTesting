@@ -33,6 +33,7 @@ namespace CodeQLTesting.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] string username, [FromBody] string password)
         {
+            BadClass badClass = new BadClass();
             return Ok();
         }
     }
