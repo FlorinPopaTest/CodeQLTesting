@@ -1,0 +1,6 @@
+﻿---
+library: false
+name: codeql
+version: 0.0.1
+dependencies:
+  codeql/csharp-all
