@@ -17,7 +17,7 @@ namespace CodeQLTesting
             {
                 ctx.Response.Redirect("login");
             }
-
+            //testing
             //string hashedPassword = loadPasswordFromSecretConfig();
 
             // GOOD: Inbound authentication made by comparing to a hash password from a config
