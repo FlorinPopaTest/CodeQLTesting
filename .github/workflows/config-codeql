@@ -2,5 +2,5 @@ name: "My CodeQL config"
 disable-default-queries: true
 queries:
   - uses: security-and-quality
-  - uses: .github/workflows/codeql-custom-queries-csharp/EmptyTryCatch.ql
-  - uses: .github/workflows/codeql-custom-queries-csharp/CommentedOutCode.ql
+  - uses: ./codeql-custom-queries-csharp/EmptyTryCatch.ql
+  - uses: ./codeql-custom-queries-csharp/CommentedOutCode.ql
