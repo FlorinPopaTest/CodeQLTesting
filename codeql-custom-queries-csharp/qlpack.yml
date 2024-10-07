@@ -1,0 +1,7 @@
+---
+library: false
+name: charp-custom-queries
+version: 0.0.1
+dependencies:
+  codeql/csharp-all: "*"
+extractor: csharp
