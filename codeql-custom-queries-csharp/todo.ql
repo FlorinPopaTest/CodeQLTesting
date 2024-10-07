@@ -9,6 +9,6 @@
  */
 import csharp
 
-from Comment c
+from CommentLine c
 where c.getText().regexpMatch("(?si).*\\bTODO\\b.*")
 select c,"foobar"
