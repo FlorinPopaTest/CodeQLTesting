@@ -12,7 +12,12 @@
 name: "CodeQL Advanced"
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false
+      
 
 jobs:
   analyze:
