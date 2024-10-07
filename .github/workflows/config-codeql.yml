@@ -5,3 +5,4 @@ queries:
   - uses: ./codeql-custom-queries-csharp/EmptyTryCatch.ql
   - uses: ./codeql-custom-queries-csharp/CommentedOutCode.ql
   - uses: ./codeql-custom-queries-csharp/MutualDependency.ql
+  - uses: ./codeql-custom-queries-csharp/StaticArray.ql
