@@ -2,7 +2,7 @@ name: "My CodeQL config"
 disable-default-queries: true
 queries:
   - uses: security-extended
-  - uses: secuirty-and-quality
+  - uses: security-and-quality
   - uses: ./codeql-custom-queries-csharp/EmptyTryCatch.ql
   - uses: ./codeql-custom-queries-csharp/CommentedOutCode.ql
   - uses: ./codeql-custom-queries-csharp/MutualDependency.ql
