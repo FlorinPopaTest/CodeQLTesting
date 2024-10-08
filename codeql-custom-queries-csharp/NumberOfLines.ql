@@ -1,10 +1,13 @@
 /**
- * This is an automatically generated file
- *
- * @name Hello world
+ * @name Number of lines
+ * @description Try to avoid too muchh lines code in single file
  * @kind problem
- * @problem.severity warning
- * @id csharp/example/hello-world
+ * @problem.severity recommendation
+ * @precision medium
+ * @id csharp/number-of-lines
+ * @tags maintainability
+ *       statistical
+ *       non-attributable
  */
 
 import csharp
