@@ -21,7 +21,7 @@ namespace CodeQLTesting.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-        //TODO expect codeql fire
+            //TODO
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
@@ -34,11 +34,23 @@ namespace CodeQLTesting.Controllers
         [HttpPost("login")]
         public IActionResult Login([FromBody] string username, [FromBody] string password)
         {
+
+
             BadClass badClass = new BadClass();
+            ConnectionType connectionType = ConnectionType.Connected;
+            if (connectionType != ConnectionType.Connected)
+            {
+                if (connectionType != ConnectionType.Disconected)
+                {
+                    int j = 1;
+                }
+
+            }
             if (true)
             {
 
-            } else
+            }
+            else
             {
                 int i = 0;
             }
