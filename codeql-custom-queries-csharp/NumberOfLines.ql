@@ -2,7 +2,7 @@
  * @name Number of lines
  * @description Try to avoid too muchh lines code in single file
  * @kind problem
- * @problem.severity recommendation
+ * @problem.severity error
  * @precision medium
  * @id csharp/number-of-lines
  * @tags maintainability
@@ -15,6 +15,10 @@ import csharp
 from File f
 // where f.getExtension().matches("%cs\\%")
 where
-  (f.fromSource() or f.getExtension() = "cs") and
+  (
+    f.fromSource()
+    or
+    f.getExtension() = "cs"
+  ) and
   f.getNumberOfLines() > 30
-select f.getRelativePath(), "Number of Lines: " + f.getNumberOfLines().toString()
+select f, "Number of Lines: " + f.getNumberOfLines().toString()
