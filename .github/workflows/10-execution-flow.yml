@@ -3,11 +3,9 @@ name: 10 - Controlling the Execution flow
 on:
   workflow_dispatch:
     inputs:
-      build-status:
-        type: choice
-        options:
-          - success
-          - failure
+      use-cache:
+        type: boolean
+        default: true 
    
 jobs:
   build:
