@@ -3,58 +3,28 @@ name: 10 - Controlling the Execution flow
 on:
   workflow_dispatch:
     inputs:
-      pass-unit-tests:
+      build-status:
         type: choice
         options:
-          - v1
-          - v2
-          - v3
-        description: Whether unit tests will pass or not
-
+          - success
+          - failure
+   
 jobs:
-  lint-build:
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      build-status: ${{ steps.build.outputs.status }}
     steps:
-      - name: Lint and build
-        run: echo "Lint and build"
-  unit-tests:
+      - name: Print GITHU_OUTPUT path
+        run: echo "$GITHUB_OUTPUT
+      - name: Build
+        id: build
+        run: echo "status=${{ inputs.build-status }}" >> "$GITHUB_OUTPUT
+  deploy:
     runs-on: ubuntu-latest
-    continue-on-error: true
+    needs: build
+    if: ${{ needs.build.outputs.build-status }}
     steps:
-      - name: Runing unit-tests
-        run: echo "Runing unit-tests"
-      - name: Failing test
-        if: ${{ !inputs.pass-unit-tests }}
-        run: exit 1
-  deploy-nonprod:
-    runs-on: ubuntu-latest
-    needs:
-      - lint-build
-      - unit-tests
-    steps:
-      - name: Deploying to nonprod
-        run: echo "Deploying to nonprod..."
-
-  e2e-tests:
-    runs-on: ubuntu-latest
-    needs: 
-      - deploy-nonprod
-    steps:
-      - name: Runing E2E tests
-        run: echo "Runing E2E tests"
-  load-tests:
-    runs-on: ubuntu-latest
-    needs:
-      - deploy-nonprod
-    steps:
-      - name: Runing load tests
-        run: echo "Runing load tests"
-  deploy-to-prod:
-      runs-on: ubuntu-latest
-      needs:
-        - e2e-tests
-        - load-tests
-      steps:
-        - name: Deploying to prod
-          run: echo "Deploying to prod..."
-          
+      - name: Deploy
+        run: echo "Deploy"
+       
