@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       pass-unit-tests:
-        type: boolean
+        type: choice
+        options:
+          - v1
+          - v2
+          - v3
         description: Whether unit tests will pass or not
 
 jobs:
